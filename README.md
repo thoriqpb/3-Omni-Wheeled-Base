@@ -1,1 +1,1 @@
-# 3-Omni-wheeled-Base-with-BNO055-Feedback
+# 3 Omni-wheeled Base with BNO055 Feedback
