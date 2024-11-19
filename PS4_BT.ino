@@ -42,7 +42,7 @@ void loop() {
     v2 = -Vx * cos(60 * PI / 180) - Vy * cos(30 * PI / 180) + w / 2;
     v3 = -Vx * cos(60 * PI / 180) + Vy * cos(30 * PI / 180) + w / 2;
 
-    Serial.printf("Vx: %d   \tVy: %d   \tw: %d    \t||\t  v1: %.2f\tv2: %.2f\tv3: %.2f\t", Vx, Vy, w, v1, v2, v3);
+    Serial.printf("Vx: %.2f   \tVy: %.2f   \tw: %.2f    \t||\t  v1: %.2f\tv2: %.2f\tv3: %.2f\t", Vx, Vy, w, v1, v2, v3);
     Serial.printf("Battery: %d", PS4.Battery());
     if (PS4.Charging()) Serial.print(" (Charging)");
     Serial.println();
