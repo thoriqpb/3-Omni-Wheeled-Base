@@ -28,4 +28,4 @@ This code may be updated for future improvements!
 
 ## Notes⚠️
 - make sure change the pins mode to `DIO` to prevent the ESP32 resetting repeatedly. In Arduino IDE, open `Tools`->`Flash mode`->`DIO`
-- If ESP32 couldn't pairing, try to remove paired device in ESP32 first. `Example`->`BluetoothSerial`->`bt_remove_paired_device`
+- sometimes ESP32 wouldn't pairing. To solve this, try to remove paired device in ESP32 first. `Example`->`BluetoothSerial`->`bt_remove_paired_device`
