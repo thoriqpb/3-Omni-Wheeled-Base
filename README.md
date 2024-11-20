@@ -1,6 +1,6 @@
-# 3 Omni-wheeled Base🎮
-This program controls a 3 omni-wheeled base robot using PS4 controller (Bluetooth Classic Connenction). My team and I utilized the ESP32 as the microcontroller and the IBT2 motor driver for controlling PG45 motor DC. Since we didn't use the encoders, we opted for PWM as the output instead of motor speed (𝑉𝑖). Our focus was on experimenting with PID control for the BNO055 alongside the 3 omni-wheeled base.
-  
+# 3 Omni-wheeled Base🚘
+This program controls a 3 omni-wheeled base robot using PS4 controller library (Bluetooth Classic Connenction). My team and I utilized the ESP32 as the microcontroller and the IBT2 motor driver for controlling PG45 motor DC. Since we didn't use the encoders, we opted for PWM as the output instead of motor speed (𝑉𝑖). 
+
 The robot rotates at a positive 𝑉𝑖 when 𝑉1, 𝑉2 and 𝑉3 move in a clockwise direction. For 𝑉𝑥, the robot moves to the right, while for 𝑉𝑦, it moves upwards. I calculated the inverse kinematics for 𝑉1, 𝑉, and 𝑉3 using the 𝑉𝑥, 𝑉𝑦 and 𝜔 inputs. While the robot's direction functions correctly, the 𝑉𝑖 is not accurate because I used the transpose instead of the inverse for the matrix calculation. Here are the equations:
 
   `V1 = Vx + ω`
@@ -17,13 +17,20 @@ This code may be updated for future improvements!
    - SDA `pin 21`
    - SCL `pin 22`
 2. IBT2
-   Connect each motor driver’s `PWM` and `EN` pins according to the program's specifications.
+   connect each motor driver’s `PWM` and `EN` pins according to the program's specifications.
+
+
+## Setting Up the Controller🎮
+Every Bluetooth controller has a unique MAC address. To connect the controller to your program, you need to specify its MAC address, such as `ec:64:c9:5e:28:xx`. To find your controller's MAC address, use the SixAxis Pair Tool. Here's how:
+1. download and install the [SixAxis Pair Tool](https://sixaxispairtool.en.lo4d.com/windows).
+2. connect your controller to your laptop using a data cable.
+3. launch the tool to view the MAC address of your controller.
 
 
 ## How it works😺❔
-1. Upload and run the program.
-2. the motor speed and x-angle should be started in 0.
-3. Pair the ESP32 with PS4.
+1. upload and run the program.
+2. the motor speed and should be started in 0.
+3. pair the ESP32 with PS4.
 
 
 ## Notes⚠️
