@@ -26,7 +26,7 @@ void setup() {
   pinMode(MOTOR3_A, OUTPUT);
   pinMode(MOTOR3_B, OUTPUT);
 
-  PS4.begin("08:d1:f9:e0:ab:16"); // Replace with your PS4 MAC address
+  PS4.begin("ec:64:c9:5e:28:92"); // Replace with your PS4 MAC address
   Serial.println("PS4 ready to connect!");
 }
 
@@ -34,7 +34,7 @@ void loop() {
   if (PS4.isConnected()) {
     // Map left stick for Vx, Vy and right stick for w
     Vx = map(PS4.LStickX(), -128, 127, -255, 255);
-    Vy = map(PS4.LStickY(), -128, 127, -255, 255);
+    Vy = map(PS4.LStickY(), -128, 127, 255, -255);
     w = map(PS4.RStickX(), -128, 127, -180, 180);
 
     // Motor speed calculation
@@ -51,7 +51,7 @@ void loop() {
     controlMotor(v1, MOTOR1_A, MOTOR1_B);
     controlMotor(v2, MOTOR2_A, MOTOR2_B);
     controlMotor(v3, MOTOR3_A, MOTOR3_B);
-  }
+  } 
 }
 
 // Function to control motor based on v_target
